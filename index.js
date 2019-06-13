@@ -1,16 +1,11 @@
-var link = "";
-function clicked(){
+function clicked () {
 $('.jumbotron').toggle("slide");
-link= prompt("Please enter The Correct Json Link:", "");
-if(link !== null|| link !== "")
-{
 setTimeout(print, 1000);
-}
 }
 
 function print(){
 
-$.getJSON(link, {callback: "?"}, function(res) {
+$.getJSON('https://s3.amazonaws.com/open-to-cors/assignment.json', {callback: "?"}, function(res) {
 	
 var txt = "";
 var data = res.products;

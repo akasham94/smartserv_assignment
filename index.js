@@ -1,11 +1,16 @@
+var link = "";
 function clicked(){
 $('.jumbotron').toggle("slide");
+link= prompt("Please enter The Correct Json Link:", "");
+if(link !== null|| link !== "")
+{
 setTimeout(print, 1000);
+}
 }
 
 function print(){
 
-$.getJSON('https://s3.amazonaws.com/open-to-cors/assignment.json', {callback: "?"}, function(res) {
+$.getJSON(link, {callback: "?"}, function(res) {
 	
 var txt = "";
 var data = res.products;
@@ -39,7 +44,7 @@ function sortTable() {
     rows = table.rows;
     /*Loop through all table rows (except the
     first, which contains table headers):*/
-    for (i = 1; i < (rows.length - 1); i++) {
+    for (i = 1; i < (600); i++) {
       //start by saying there should be no switching:
       shouldSwitch = false;
       /*Get the two elements you want to compare,
